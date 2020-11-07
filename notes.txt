@@ -1,0 +1,48 @@
+--------------------------------------------------------------------------------
+tuple: An ordered collection of n values of any type (n >= 0).
+a = (1, 2, 3)
+b = ('a', 1, 'python', (1, 2))
+b[2] = 'something else' # returns a TypeError
+Supports indexing; immutable; hashable if all its members are hashable
+--------------------------------------------------------------------------------
+list: An ordered collection of n values (n >= 0)
+a = [1, 2, 3]
+b = ['a', 1, 'python', (1, 2), [1, 2]]
+b[2] = 'something else' # allowed
+Not hashable; mutable.
+--------------------------------------------------------------------------------
+Security Remark: Do not use input() in Python2
+the entered text will be evaluated as if it were a
+Python expression (equivalent to eval(input()) in Python3),
+which might easily become a vulnerability.
+See this article for further information on the risks of using this function.
+--------------------------------------------------------------------------------
+If you want to create a copy of the list you have below options.
+You can slice it:
+new_list = old_list[:]
+You can use the built in list() function:
+new_list = list(old_list)
+You can use generic copy.copy():
+import copy
+new_list = copy.copy(old_list) #inserts references to the objects found in the original.
+This is a little slower than list() because it has to find out the datatype of old_list first.
+If the list contains objects and you want to copy them as well, use generic copy.deepcopy():
+import copy
+new_list = copy.deepcopy(old_list) #inserts copies of the objects found in the original.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
